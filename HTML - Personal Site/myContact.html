@@ -2,12 +2,23 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Contact Me!</title>
   </head>
   <body>
     <h1>Kevin Pham</h1>
     <p>1358 Oakland Rd SPC 16 <br> San Jose, CA 95112</p>
     <p>phambamkevin@gmail.com </p>
     <p>(408) 892-3637</p>
+    <hr>
+    <!-- Form for contacting me -->
+    <form action="mailto:phambamkevin@gmail.com" method="post" enctype="text/plain">
+      <label>Your Name:</label>
+        <input type="text" name="yourName" value=""><br>
+      <label>Your Email:</label>
+        <input type="email" name="yourEmail"><br>
+      <label>Your Message:</label><br>
+        <textarea name="yourMessage" rows="8" cols="40"></textarea><br>
+      <input type="submit" name="">
+    </form>
   </body>
 </html>
