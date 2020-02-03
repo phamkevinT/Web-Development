@@ -7,21 +7,102 @@
 </head>
 
 <body>
-  <img src="img\kevin_profile.jpg" alt="Kevin's profile picture">
-  <h1>Kevin Pham</h1>
-  <p><em>Software Engineering Student</em></p>
-  <p>I am a full time student majoring in Software Engineering at San Jose State University.
-    <a href="https://www.linkedin.com/in/kevintpham/">More about me.</a></p>
-  <p>Link to my
-    <a href="myContact.html"> contact information.</a></p>
+  <!-- Page introduction -->
+  <table cellspacing="20">
+    <tr>
+      <!-- Picture and text are side-by-side by using table -->
+      <td><img src="img\kevin_profile.png" alt="Kevin's profile picture"></td>
+      <td>  <h1>Kevin Pham</h1>
+        <p><em>Software Engineering Student</em></p>
+        <p>I am a full time student majoring in Software Engineering at San Jose State University.
+          <a href="https://www.linkedin.com/in/kevintpham/">More about me.</a></p>
+        <p>Link to my
+          <a href="myContact.html"> contact information.</a></p>
+      </td>
+    </tr>
+  </table>
   <hr>
+
+  <!-- First section: "Education" -->
   <h3>Education</h3>
   <ul>
-    <li>CS 146 - Data Structures and Algorithms</li>
-    <li>CS 157A - Introduction to Database Mangement Systems</li>
-    <li>CS 166 - Information Security</li>
-    <li>SE 187 - Software Quality Engineering</li>
+    <li>San Jose State University (2016-2020)</li>
   </ul>
+  <hr>
+
+  <!-- Second section: "Course Completed" -->
+  <h3>Course Completed</h3>
+  <!-- Table within a table -->
+  <table cellspacing="10">
+    <tr>
+      <!-- 1st column of the table -->
+      <td>
+        <table>
+          <tr>
+            <td>CS 146</td>
+            <td>Data Structures and Algorithms</td>
+          </tr>
+          <tr>
+            <td>CS 157A</td>
+            <td>Introduction to Database Mangement Systems</td>
+          </tr>
+          <tr>
+            <td>CS 166</td>
+            <td>Information Security</td>
+          </tr>
+        </table>
+      </td>
+      <!-- 2nd column of the table -->
+      <td>
+        <table cellspacing="10">
+          <tr>
+            <td>CMPE 187</td>
+            <td>Software Quality Engineering</td>
+          </tr>
+          <tr>
+            <td>CMPE 148</td>
+            <td>Computer Network I</td>
+          </tr>
+          <tr>
+            <td>CMPE 131</td>
+            <td>Software Engineering I</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <hr>
+
+  <!-- Third Section: "Work Expereience" -->
+  <h3>Work Experience</h3>
+  <table>
+    <!-- Table headers are used incase we want to 'freeze' then when scrolling -->
+    <thead>
+      <tr>
+        <th>Dates</th>
+        <th>Work</th>
+      </tr>
+    </thead>
+    <tr>
+      <td>Jul.2016 - Jun.2017</td>
+      <td><a href="https://www.cagreatamerica.com/">California's Great America</a> Food & Beverage Team Leader</td>
+    </tr>
+    <tr>
+      <td>Jun.2017 - Apr.2019</td>
+      <td>CGA F&B Supervisor</td>
+    </tr>
+    <tr>
+      <td>Apr.2019 - Jul.2019</td>
+      <td>CGA F&B Area Supervisor</td>
+    </tr>
+    <tr>
+      <td>Jul.2019 - Present</td>
+      <td>CGA F&B Operations Supervisor</td>
+    </tr>
+  </table>
+  <hr>
+
+  <!-- Fourth Section: "My Hobbies" -->
   <a href="hobbies.html">My Hobbies</a>
 </body>
 
