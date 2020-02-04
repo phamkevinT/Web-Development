@@ -1,0 +1,10 @@
+body {
+  background-color: #e3fdfd;
+}
+hr {
+  border-style: none; /* Make all sides of border not visible */
+  border-top-style: dotted; /* Change top-side solid border to dottede border */
+  border-color: grey; /* Color of the dots */
+  border-width: 5px; /* Size of the dots */
+  width: 5%; /* Size of the horiztonal rule (hr) based on percent of website */
+}
