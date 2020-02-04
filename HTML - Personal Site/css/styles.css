@@ -8,3 +8,7 @@ hr {
   border-width: 5px; /* Size of the dots */
   width: 5%; /* Size of the horiztonal rule (hr) based on percent of website */
 }
+
+h1, h3 {
+  color: #66BFBF;
+}
