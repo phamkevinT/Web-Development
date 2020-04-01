@@ -30,12 +30,14 @@
       <!-- Nav Bar -->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="">tindog</a>
+        <!-- Provided by Bootstrap -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <!-- Can use section id in href to jump to that particular sectiton. -->
               <a class="nav-link" href="#footer">Contact</a>
             </li>
             <li class="nav-item">
@@ -50,8 +52,10 @@
 
       <!-- Title -->
       <div class="row">
+        <!-- Split into columns, lg = computer size, 6 = take 6 units of the 12 on the page... aka 2 columns -->
         <div class="col-lg-6">
           <h1>Meet new and interesting dogs nearby.</h1>
+          <!-- Icons taken from FontAwesome -->
           <button type="button" class="btn btn-dark btn-lg download-button"><i class="fab fa-apple"></i> Download</button>
           <button type="button" class="btn btn-outline-light btn-lg download-button"><i class="fab fa-google-play"></i> Download</button>
         </div>
@@ -72,6 +76,7 @@
     <div class="row">
 
       <div class="feature-box col-lg-4">
+        <!-- fa-4x = the size of the icon -->
         <i class="icon fas fa-check-circle fa-4x"></i>
         <h3>Easy to use.</h3>
         <p>So easy to use, even your dog could do it.</p>
@@ -141,7 +146,7 @@
     <p>Simple and affordable price plans for your and your dog.</p>
 
     <div class="row">
-
+      <!-- Responsive based on device. lg (computer) = take 4 of 12, md = take 6 of 12, sm (not stated, by default) take 12 of 12 -->
       <div class="pricing-col col-lg-4 col-md-6">
         <div class="card">
           <div class="card-header">
