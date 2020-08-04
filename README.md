@@ -1,2 +1,57 @@
-# Web-Development
-Udemy - The Complete 2020 Web Development Bootcamp by Angela Yu
+# The Complete 2020 Web Development Bootcamp
+
+An online udemy course taught by Dr. Angela Yu
+
+## Course Material
+
+- Front-End Web Development
+
+- HTML 5
+
+- CSS 3
+
+- Bootstrap 4
+
+- Javascript ES6
+
+- DOM Manipulation
+
+- jQuery
+
+- Bash Command Line
+
+- Git, GitHub and Version Control
+
+- Backend Web Development
+
+- Node.js
+
+- NPM
+
+- Express.js
+
+- EJS
+
+- REST
+
+- APIs
+
+- Databases
+
+- SQL
+
+- MongoDB
+
+- Mongoose
+
+- Authentication
+
+- Firebase
+
+- React.js
+
+- React Hooks
+
+- Web Design
+
+- Deployment with GitHub Pages, Heroku and MongoDB Atlas
