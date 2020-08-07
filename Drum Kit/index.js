@@ -1,5 +1,12 @@
-document.querySelector("button").addEventListener("click", handleClick); // Notice that its not "handleClick()" as this is an instant function call
+/**
+      document.querySelector("button").addEventListener("click", handleClick); // Notice that its not "handleClick()" as this is an instant function call
+      function handleClick() {
+        alert("I got clicked!");
+      }
+**/
 
-function handleClick() {
+// Anonymous Functions that replaces the one above.
+
+document.querySelector("button").addEventListener("click", function() {
   alert("I got clicked!");
-}
+});
