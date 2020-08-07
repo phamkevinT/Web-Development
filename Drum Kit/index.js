@@ -5,8 +5,17 @@
       }
 **/
 
-// Anonymous Functions that replaces the one above.
+// The number of elements with CLASS 'drum'
+var numberOfDrumButtons = document.querySelectorAll(".drum").length;
 
-document.querySelector("button").addEventListener("click", function() {
-  alert("I got clicked!");
-});
+// Loop through all element when CLASS 'drum'
+for (var i = 0; i < numberOfDrumButtons; i++) {
+
+  // Anonymous Functions that replaces the one above.
+  // This adds event listner to each '.drum' CLASS in order, hence the for loop
+  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+    alert("I got clicked!");
+
+    // What to do when click detected.
+  });
+}
