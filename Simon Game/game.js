@@ -46,3 +46,16 @@ function playSound(name) {
   var audio = new Audio("sounds/" + name + ".mp3");
   audio.play();
 }
+
+
+// Animates User Clicks
+function animatePress(currentColour) {
+
+  // jQuery to add the "pressed" styling to the button's class
+  $("#" + currentColour).addClass("pressed");
+
+  // Remove "pressed" class styling after 100 miliseconds
+  setTimeout (function() {
+    $("#" + currentColour).removeClass("pressed");
+  }, 100);
+}
