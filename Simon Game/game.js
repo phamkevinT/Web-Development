@@ -15,14 +15,14 @@ var level = 0;
 
 
 // jQuery to detect if keyboard key has been pressed
-$(document).keypress(function) {
+$(document).keypress(function () {
   if(!started) {
     // If game has started, change title to "Level 0" and call nextSequence()
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
   }
-}
+});
 
 
 // jQuery to detect when any of the button are userClickedPattern
@@ -35,12 +35,12 @@ $(".btn").click(function() {
   userClickedPattern.push(userChosenColour);
 
   // Plays the sound of button user pressed
-  playSound("userChosenColour");
+  playSound(userChosenColour);
 
   // Animate button that user chose
-  animatePress("userChosenColour");
+  animatePress(userChosenColour);
 
-  //
+  checkAnswer(userClickedPattern.length -1);
 });
 
 
@@ -48,8 +48,7 @@ $(".btn").click(function() {
 function checkAnswer(currentLevel) {
 
   // Checks if user's recent answer is same as game's
-  if(gamePattern[currentLevel]) === userClickedPattern[currentLevel] {
-    console.log("success");
+  if(gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
 
     // Check that they have finished all the button sequence before moving onto next level
     if(userClickedPattern.length === gamePattern.length) {
@@ -61,19 +60,19 @@ function checkAnswer(currentLevel) {
     }
   }
   else {
-    console.log("wrong");
 
     // Plays this sound when user chooses wrong button
     playSound("wrong");
 
     // Change body of website to "Game Over" and revert back to normal after delay
     $("body").addClass("game-over");
-    setTimeout(function() {
-      $("body").removeClass("game-over");
-    }, 200);
 
     // Change title to "Game Over, Press Any Key to Restart"
     $("#level-title").text("Game Over, Press Any Key to Restart");
+
+    setTimeout(function() {
+      $("body").removeClass("game-over");
+    }, 200);
 
     // Restart the game;
     startOver();
@@ -134,7 +133,11 @@ function animatePress(currentColour) {
 
 // Restart the game from the beginning
 function startOver() {
+
+  // Reset level to zero
   level = 0;
+  // Reset game pattern to empty
   gamePattern = [];
+  // Change game state to false
   started = false;
 }
