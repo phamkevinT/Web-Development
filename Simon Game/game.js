@@ -40,6 +40,7 @@ $(".btn").click(function() {
   // Animate button that user chose
   animatePress(userChosenColour);
 
+  // Pass the index of user's most recent answer
   checkAnswer(userClickedPattern.length -1);
 });
 
