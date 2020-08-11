@@ -36,11 +36,44 @@ $(".btn").click(function() {
 
   // Plays the sound of button user pressed
   playSound("userChosenColour");
+
+  // Animate button that user chose
+  animatePress("userChosenColour");
+
+  //
 });
+
+
+// Checks user's button choice against game's button choice
+function checkAnswer(currentLevel) {
+
+  // Checks if user's recent answer is same as game's
+  if(gamePattern[currentLevel]) === userClickedPattern[currentLevel] {
+    console.log("success");
+
+    // Check that they have finished all the button sequence before moving onto next level
+    if(userClickedPattern.length === gamePattern.length) {
+
+      // Progress to next level after 1000 milisecon delay
+      setTimeout(function () {
+        nextSequence();
+      }, 1000);
+    }
+  }
+  else {
+    console.log("wrong");
+
+    // Plays this sound when user chooses wrong button
+    playSound("wrong");
+  }
+}
 
 
 // Determine the next button in the sequence
 function nextSequence() {
+
+  // Resets the user's button choice pattern for the next level
+  userClickedPattern = [];
 
   // Increase level once everytime function is called
   level++;
