@@ -1,8 +1,28 @@
+// Button colors
 var buttonColours = ["red", "blue", "green", "yellow"];
 
+// Buttons that game generated
 var gamePattern = [];
 
+// Buttons that user clicked
 var userClickedPattern = [];
+
+// Keep track of whether game has started or not
+var started = false;
+
+// Game level
+var level = 0;
+
+
+// jQuery to detect if keyboard key has been pressed
+$(document).keypress(function) {
+  if(!started) {
+    // If game has started, change title to "Level 0" and call nextSequence()
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+}
 
 
 // jQuery to detect when any of the button are userClickedPattern
@@ -21,6 +41,12 @@ $(".btn").click(function() {
 
 // Determine the next button in the sequence
 function nextSequence() {
+
+  // Increase level once everytime function is called
+  level++;
+
+  // Update the game level everytime function is called
+  $("#level-title").text("Level " + level);
 
   // Get a number from 1 to 4
   var randomNumber = Math.floor(Math.random() * 4);
