@@ -65,6 +65,18 @@ function checkAnswer(currentLevel) {
 
     // Plays this sound when user chooses wrong button
     playSound("wrong");
+
+    // Change body of website to "Game Over" and revert back to normal after delay
+    $("body").addClass("game-over");
+    setTimeout(function() {
+      $("body").removeClass("game-over");
+    }, 200);
+
+    // Change title to "Game Over, Press Any Key to Restart"
+    $("#level-title").text("Game Over, Press Any Key to Restart");
+
+    // Restart the game;
+    startOver();
   }
 }
 
@@ -117,4 +129,12 @@ function animatePress(currentColour) {
   setTimeout (function() {
     $("#" + currentColour).removeClass("pressed");
   }, 100);
+}
+
+
+// Restart the game from the beginning
+function startOver() {
+  level = 0;
+  gamePattern = [];
+  started = false;
 }
