@@ -8,7 +8,9 @@ const app = express();
 // Have to use this line in order for our static files to be used by server
 app.use(express.static("public"));
 // Have to use this line in order to use body-parser
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 
 app.get("/", function(req, res) {
@@ -22,16 +24,14 @@ app.post("/", function(req, res) {
   const email = req.body.email;
 
   var data = {
-    members: [
-      {
-        email_address: email,
-        status: "subscribed",
-        merge_fields: {
-          FNAME: firstName,
-          LNAME: lastName
-        }
+    members: [{
+      email_address: email,
+      status: "subscribed",
+      merge_fields: {
+        FNAME: firstName,
+        LNAME: lastName
       }
-    ]
+    }]
   };
 
   // Turn the data/info above to a JSON object
@@ -39,8 +39,8 @@ app.post("/", function(req, res) {
 
   const url = "https://us17.api.mailchimp.com/3.0/lists/ad76f36bac";
   const options = {
-      method: "POST",
-      auth: "kevin1:7f3725f2e5a1236b45ab576f6f78b07c-us17"
+    method: "POST",
+    auth: "kevin1:7f3725f2e5a1236b45ab576f6f78b07c-us17"
   }
 
   const request = https.request(url, options, function(response) {
