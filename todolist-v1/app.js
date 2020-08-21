@@ -6,13 +6,14 @@ const app = express();
 app.get("/", function (req, res) {
 
   var today = new Date();
+  var currentDay = today.getDay();
 
-  if (today.getDay() === 6 || today.getDay() === 0) {
-    res.send("Yay its the weekend!");
+  // Check if current day is Sat (6) or Sun (0)
+  if (currentDay === 6 || currentDay === 0) {
+    res.write("<h1>Yay its the weekend!</h1>");
   } else {
-    res.send("Boo! I have to work...");
+    res.sendFile(__dirname + "/index.html");
   }
-
 
 });
 
