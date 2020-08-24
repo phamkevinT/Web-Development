@@ -9,21 +9,23 @@
 <body>
 
     <!-- Need snipet tag to add JS Code on special scenario... best to keep logic in app.js file -->
+    <!-- Displays today's date -->
     <h1> <%= kindOfDay %> </h1>
 
     <ul>
 
+        <!-- Loop through the array of newListItems (defined in app.js) and print each element in a list -->
         <%    for(var i=0; i < newListItems.length; i++) { %>
                 <li> <%= newListItems[i] %></li>
         <%    } %>
 
     </ul>
 
+    <!-- A form that users use to enter in item to be added to current list -->
     <form class="" action="/" method="post">
         <input type="text" name="newItem">
         <button type="submit" name="button">Add</button>
     </form>
-
 
 
 </body>
