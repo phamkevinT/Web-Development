@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // Array of items
-var items = ["Buy Food", "Cook Food", "Eat Food"];
+let items = ["Buy Food", "Cook Food", "Eat Food"];
 
 app.set('view engine', 'ejs'); // Tells our app to use EJS
 app.use(bodyParser.urlencoded({extended: true})); // Needed to use Body Parser
@@ -12,16 +12,16 @@ app.use(bodyParser.urlencoded({extended: true})); // Needed to use Body Parser
 // Our GET function for home route
 app.get("/", function (req, res) {
 
-  var today = new Date();
+  let today = new Date();
   
   // 'Styling' to be added to our today variable
-  var options = {
+  let options = {
     weekday: "long",
     day: "numeric",
     month: "long"
   };
 
-  var day = today.toLocaleDateString("en-US", options);
+  let day = today.toLocaleDateString("en-US", options);
 
 
   // Render a file called "list" inside the "views" folder with extenstion ".ejs". "kindOfDay" and "newListItems" is a KEY in the list.ejs
@@ -34,7 +34,7 @@ app.get("/", function (req, res) {
 app.post("/", function(req, res) {
 
   // Get the user's input from the form in list.ejs
-  var item = req.body.newItem; 
+  let item = req.body.newItem; 
   
   // Adds the input to the array
   items.push(item);
