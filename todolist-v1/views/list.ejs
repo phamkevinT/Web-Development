@@ -1,42 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("header") -%>
 
-<head>
-    <meta charset="UTF-8">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+<div class="box" id="heading">
+    <!-- Need snipet tag to add JS Code on special scenario... best to keep logic in app.js file -->
+    <!-- Displays today's date -->
+    <h1> <%= listTitle %> </h1>
 
-<body>
+</div>
 
-    <div class="box" id="heading">
-        <!-- Need snipet tag to add JS Code on special scenario... best to keep logic in app.js file -->
-        <!-- Displays today's date -->
-        <h1> <%= listTitle %> </h1>
-
+<div class="box">
+    <!-- Loop through the array of newListItems (defined in app.js) and print each element in a list -->
+    <%    for(var i=0; i < newListItems.length; i++) { %>
+    <div class="item">
+        <input type="checkbox">
+        <p> <%= newListItems[i] %></p>
     </div>
 
-    <div class="box">
-        <!-- Loop through the array of newListItems (defined in app.js) and print each element in a list -->
-        <%    for(var i=0; i < newListItems.length; i++) { %>
-        <div class="item">
-            <input type="checkbox">
-            <p> <%= newListItems[i] %></p>
-        </div>
-
-        <%    } %>
+    <%    } %>
 
 
-        <!-- A form that users use to enter in item to be added to current list -->
-        <form class="" action="/" method="post">
-            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-            <!-- value=<%= listTitle %> gets the title of which list -->
-            <button type="submit" name="list" value=<%= listTitle %>>+</button>
-        </form>
-    </div>
+    <!-- A form that users use to enter in item to be added to current list -->
+    <form class="" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <!-- value=<%= listTitle %> gets the title of which list -->
+        <button type="submit" name="list" value=<%= listTitle %>>+</button>
+    </form>
+</div>
 
-
-
-</body>
-
-</html>
+<%- include("footer") -%>
