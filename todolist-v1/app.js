@@ -1,10 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const date = require(__dirname + "/date.js");
 const app = express();
 
 // Array of items
-let items = ["Buy Food", "Cook Food", "Eat Food"];
-let workItems = [];
+const items = ["Buy Food", "Cook Food", "Eat Food"];
+const workItems = [];
 
 app.set('view engine', 'ejs'); // Tells our app to use EJS
 app.use(bodyParser.urlencoded({
@@ -15,17 +16,7 @@ app.use(express.static("public"));
 // Our GET function for home route
 app.get("/", function (req, res) {
 
-  let today = new Date();
-
-  // 'Styling' to be added to our today variable
-  let options = {
-    weekday: "long",
-    day: "numeric",
-    month: "long"
-  };
-
-  let day = today.toLocaleDateString("en-US", options);
-
+  let day = date.getDate();
 
   // Render a file called "list" inside the "views" folder with extenstion ".ejs". "kindOfDay" and "newListItems" is a KEY in the list.ejs
   res.render("list", {
@@ -56,7 +47,15 @@ app.post("/", function (req, res) {
 });
 
 app.get("/work", function (req, res) {
-  res.render("list", {listTitle: "Work List", newListItems: workItems});
+  res.render("list", {
+    listTitle: "Work List",
+    newListItems: workItems
+  });
+});
+
+
+app.get("/about", function (req, res) {
+  res.render("about");
 });
 
 app.listen(3000, function () {
