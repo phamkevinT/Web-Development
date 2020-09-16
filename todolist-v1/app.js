@@ -7,7 +7,7 @@ let items = ["Buy Food", "Cook Food", "Eat Food"];
 
 app.set('view engine', 'ejs'); // Tells our app to use EJS
 app.use(bodyParser.urlencoded({extended: true})); // Needed to use Body Parser
-
+app.use(express.static("public"));
 
 // Our GET function for home route
 app.get("/", function (req, res) {
