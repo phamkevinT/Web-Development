@@ -4,6 +4,7 @@ import Header from "./Header";
 import Note from "./Note";
 import notes from "../notes";
 
+// Create a Note using properties from the notes.js file
 function createNotes(noteContents) {
     return (
         <Note
@@ -14,6 +15,7 @@ function createNotes(noteContents) {
     );
 }
 
+// Use the .map() to create all the notes
 function App() {
     return (
     <div>
