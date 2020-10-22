@@ -1,49 +1,55 @@
-import React from "react";
+import React, {useState} from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import Note from "./Note";
-import notes from "../notes";
+import CreateArea from "./CreateArea";
 
-// // First way of writing the code
-// // Create a Note using properties from the notes.js file
-// function createNotes(noteContents) {
-//     return (
-//         <Note
-//             key={noteContents.id}
-//             theTitle={noteContents.title}
-//             theContent={noteContents.content}
-//         />
-//     );
-// }
-
-// // Use the .map() to create all the notes
-// function App() {
-//     return (
-//     <div>
-//         <Header />
-//             {notes.map(createNotes)}
-//         <Footer />
-//     </div>
-//     );
-// }
-
-// Second way to writing the code
-// Use the .map() to create all the notes
-// Use the arrow function to shorten code
 function App() {
+
+    // An empty array as the initial state
+    const [notes, setNotes] = useState([]);
+
+    // Value of 'newNote' is passed over from CreateArea.jsx's submitNote function, specifically from the line: 'props.onAdd(note);'
+    function addNote(newNote) {
+        setNotes(prevNotes => {
+            // Using the 'spread' function of ES6 to combine the object arrays
+            return [...prevNotes, newNote];
+        });
+    }
+
+    // Delete the note by only return the ones that don't match the id of the note being deleted
+    function deleteNote(id) {
+        setNotes(prevNotes => {
+            // Filter through all the noteItems and return ones that don't have their index equal to the id of the note being deleted
+            return prevNotes.filter((noteItem, index) => {
+                return index !== id;
+            });
+        });
+    }
+
     return (
-    <div>
+      <div>
         <Header />
-            {notes.map((noteContents) =>
-                <Note
-                    key={noteContents.id}
-                    theTitle={noteContents.title}
-                    theContent={noteContents.content}
-                />
-            )}
+        {/* Passing down onAdd as props to the createArea.jsx */}
+        <CreateArea onAdd={addNote}/>
+        
+        {/* Return each of the 'noteItem' in the 'notes' array */}
+        {
+            notes.map((noteItem, index) => {
+            return (<Note
+                // Use the 'index' given by the map function to identify each of the notes
+                key={index}
+                id={index}
+                title={noteItem.title}
+                content={noteItem.content}
+                onDelete={deleteNote}
+            />
+            );
+            })}
+
         <Footer />
-    </div>
+      </div>
     );
-}
+  }
 
 export default App;
