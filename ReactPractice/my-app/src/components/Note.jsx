@@ -1,12 +1,18 @@
 import React from "react";
 
-// Create a single note with properties passed down from the notes.js file.
 function Note(props) {
-  return (  
-  <div className="note">
-      <h1>{props.theTitle}</h1>
-      <p>{props.theContent}</p>
-  </div>
+
+  function handleClick() {
+    // Triggers the onDelete function located in App.jsx
+    props.onDelete(props.id);
+  }
+
+  return (
+    <div className="note">
+      <h1>{props.title}</h1>
+      <p>{props.content}</p>
+      <button onClick={handleClick}>DELETE</button>
+    </div>
   );
 }
 
